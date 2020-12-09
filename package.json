@@ -2,7 +2,7 @@
   "name": "array-methods",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "functions.js",
   "scripts": {
     "test": "jest"
   },
