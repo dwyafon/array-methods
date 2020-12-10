@@ -1,1 +1,1 @@
-<h1>Practising JavaScript Array methods and testing with Jest</h1>
+<h1>Practising JavaScript Array methods and testing them with Jest</h1>
