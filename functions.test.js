@@ -22,3 +22,9 @@ test('concats two arrays', () => {
     const arr2 = [4, 5, 6]
     expect(functions.arrConcat(arr1, arr2)).toEqual([1, 2, 3, 4, 5, 6])
 })
+
+//arrIncludes
+test('returns true when array includes value; returns false when arrays does not include value', () => {
+    expect(functions.arrIncludes([1, 2, 3], 3)).toEqual(true)
+    expect(functions.arrIncludes([1, 2, 3], 4)).toEqual(false)
+});
