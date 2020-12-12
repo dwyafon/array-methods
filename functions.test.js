@@ -28,3 +28,9 @@ test('returns true when array includes value; returns false when arrays does not
     expect(functions.arrIncludes([1, 2, 3], 3)).toEqual(true)
     expect(functions.arrIncludes([1, 2, 3], 4)).toEqual(false)
 });
+
+//arrCopyWithin
+test('returns a mutated array with positive-index and negative-index targets', () => {
+    expect(functions.arrCopyWithin(['a', 'b', 'c'], 0, 2)).toEqual(['c', 'b', 'c'])
+    expect(functions.arrCopyWithin([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], -5, 0, -5)).toEqual([1, 2, 3, 4, 5, 1, 2, 3, 4, 5])
+});
