@@ -13,7 +13,7 @@ const functions = {
         }
         return entries
     }
-    }
+}
 
 
 module.exports = functions;
