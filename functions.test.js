@@ -34,3 +34,8 @@ test('returns a mutated array with positive-index and negative-index targets', (
     expect(functions.arrCopyWithin(['a', 'b', 'c'], 0, 2)).toEqual(['c', 'b', 'c'])
     expect(functions.arrCopyWithin([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], -5, 0, -5)).toEqual([1, 2, 3, 4, 5, 1, 2, 3, 4, 5])
 });
+
+test('returns an array iterator object', () => {
+    expect(functions.arrEntries(['a', 'b', 'c'])).toEqual([[0, 'a'], [1, 'b'], [2, 'c']])
+});
+

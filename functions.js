@@ -5,8 +5,15 @@ const functions = {
     arrayOf: (nonArr) => Array.of(nonArr),
     arrConcat: (arr1, arr2) => arr1.concat(arr2),
     arrIncludes: (array, value) => array.includes(value),
-    arrCopyWithin: (array, target, start, end) => array.copyWithin(target, start, end)
+    arrCopyWithin: (array, target, start, end) => array.copyWithin(target, start, end),
+    arrEntries: (array) => {
+        let entries = []
+        for (let e of array.entries()) {
+            entries.push(e)
+        }
+        return entries
+    }
+    }
 
-}
 
 module.exports = functions;
