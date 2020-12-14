@@ -12,7 +12,9 @@ const functions = {
             entries.push(e)
         }
         return entries
-    }
+    },
+    arrEvery: (array) => array.every(e => e <= 10)
+
 }
 
 

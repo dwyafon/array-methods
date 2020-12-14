@@ -39,3 +39,7 @@ test('returns an array of arrays from an array iterator object with keys and val
     expect(functions.arrEntries(['a', 'b', 'c'])).toEqual([[0, 'a'], [1, 'b'], [2, 'c']])
 });
 
+test('returns true if all elements pass the given test; returns false if at least elements fail the given test', () => {
+    expect(functions.arrEvery([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toEqual(true)
+    expect(functions.arrEvery([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])).toEqual(false)
+})
