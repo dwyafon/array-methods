@@ -41,6 +41,7 @@ test('returns a mutated array with positive-index and negative-index targets', (
   ).toEqual([1, 2, 3, 4, 5, 1, 2, 3, 4, 5]);
 });
 
+//arrEntries
 test('returns an array of arrays from an array iterator object with keys and values', () => {
   expect(functions.arrEntries(['a', 'b', 'c'])).toEqual([
     [0, 'a'],
@@ -49,6 +50,7 @@ test('returns an array of arrays from an array iterator object with keys and val
   ]);
 });
 
+//arrEvery
 test('returns true if all elements pass the given test; returns false if at least one element fails the given test', () => {
   expect(functions.arrEvery([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toEqual(true);
   expect(functions.arrEvery([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])).toEqual(
@@ -56,6 +58,7 @@ test('returns true if all elements pass the given test; returns false if at leas
   );
 });
 
+//arrFill
 test('returns a modifed array given a specific value as well as optional start and end indices', () => {
   expect(functions.arrFill([1, 1, 1, 1, 1], 0, 2, 3)).toEqual([1, 1, 0, 1, 1]);
   expect(functions.arrFill([0, 0, 0, 0, 0], 100)).toEqual([100, 100, 100, 100, 100])   
