@@ -13,8 +13,8 @@ const functions = {
         }
         return entries
     },
-    arrEvery: (array) => array.every(e => e <= 10)
-
+    arrEvery: (array) => array.every(e => e <= 10),
+    arrFill: (array, value, start, end) => array.fill(value, start, end)
 }
 
 
