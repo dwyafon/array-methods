@@ -63,3 +63,10 @@ test('returns a modifed array given a specific value as well as optional start a
   expect(functions.arrFill([1, 1, 1, 1, 1], 0, 2, 3)).toEqual([1, 1, 0, 1, 1]);
   expect(functions.arrFill([0, 0, 0, 0, 0], 100)).toEqual([100, 100, 100, 100, 100])   
 });
+
+//arrFilter
+test('returns a filtered array with all elements that pass a given callback function', () => {
+  const callback = e => e.indexOf('1') !== -1 || e.indexOf('0') !== -1
+  const array = ['1010101', '111', '333', '1001']
+  expect(functions.arrFilter(array, callback)).toEqual(['1010101', '111', '1001'])
+})
