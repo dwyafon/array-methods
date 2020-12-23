@@ -70,3 +70,12 @@ test('returns a filtered array with all elements that pass a given callback func
   const array = ['1010101', '111', '333', '1001']
   expect(functions.arrFilter(array, callback)).toEqual(['1010101', '111', '1001'])
 })
+
+//arrFind
+test('returns the first value that passes a given testing function; otherwise, returns undefined', () => {
+  const callback1 = e => e === 'Audrey'
+  const callback2 = e => e === 'Pete'
+  const array = ['Dale', 'Hawk', 'Lucy', 'Harry', 'Audrey']
+  expect(functions.arrFind(array, callback1)).toEqual('Audrey')
+  expect(functions.arrFind(array, callback2)).toEqual(undefined)
+})

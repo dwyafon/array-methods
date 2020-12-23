@@ -15,7 +15,8 @@ const functions = {
     },
     arrEvery: (array) => array.every(e => e <= 10),
     arrFill: (array, value, start, end) => array.fill(value, start, end),
-    arrFilter: (array, callback) => array.filter(callback)
+    arrFilter: (array, callback) => array.filter(callback),
+    arrFind: (array, callback) => array.find(callback),
 }
 
 
