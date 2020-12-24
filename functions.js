@@ -17,7 +17,7 @@ const functions = {
     arrFill: (array, value, start, end) => array.fill(value, start, end),
     arrFilter: (array, callback) => array.filter(callback),
     arrFind: (array, callback) => array.find(callback),
-    arrFindIndex: (array, callback) => array.findIndex(callback)
+    arrFindIndex: (array, callback) => array.findIndex(callback),
 }
 
 
