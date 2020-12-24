@@ -79,3 +79,12 @@ test('returns the first value that passes a given testing function; otherwise, r
   expect(functions.arrFind(array, callback1)).toEqual('Audrey')
   expect(functions.arrFind(array, callback2)).toEqual(undefined)
 })
+
+//arrFindIndex
+test('returns the index of the first value that passes a given test; if no element passes, -1 is returned', () => {
+  const callback1 = e => e !== 0 && e !== 1
+  const callback2 = e => e === 3
+  const array = [1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 2, 1, 1, 1, 0, 1, 0]
+  expect(functions.arrFindIndex(array, callback1)).toEqual(12)
+  expect(functions.arrFindIndex(array, callback2)).toEqual(-1)
+})
