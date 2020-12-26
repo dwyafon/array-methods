@@ -100,3 +100,12 @@ test("returns the index of the first value that passes a given test; if no eleme
 });
 
 //arrFlat
+test("returns an array flattened to the specified depth; specified depth defaults to 1", () => {
+  const array = [1, 2, 3, [4, 5, 6, [7, 8, 9, [10, 11, 12]]]]
+  const array2 = [[[[[[[[[[[[[[[[[[[[[1]]]]]]]]]]]]]]]]]]]]]
+  expect(functions.arrFlat(array, 1)).toEqual([1, 2, 3, 4, 5, 6, [7, 8, 9, [10, 11, 12]]]);
+  expect(functions.arrFlat(array, 2)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, [10, 11, 12]]);
+  expect(functions.arrFlat(array, 3)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+  expect(functions.arrFlat(array2, Infinity)).toEqual([1])
+
+})
