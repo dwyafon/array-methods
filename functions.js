@@ -18,7 +18,8 @@ const functions = {
     arrFilter: (array, callback) => array.filter(callback),
     arrFind: (array, callback) => array.find(callback),
     arrFindIndex: (array, callback) => array.findIndex(callback),
-    arrFlat: (array, depth) => array.flat(depth)
+    arrFlat: (array, depth) => array.flat(depth),
+    arrFlatMap: (array, callback) => array.flatMap(callback),
 }
 
 

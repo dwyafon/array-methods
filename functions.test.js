@@ -106,6 +106,14 @@ test("returns an array flattened to the specified depth; specified depth default
   expect(functions.arrFlat(array, 1)).toEqual([1, 2, 3, 4, 5, 6, [7, 8, 9, [10, 11, 12]]]);
   expect(functions.arrFlat(array, 2)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, [10, 11, 12]]);
   expect(functions.arrFlat(array, 3)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-  expect(functions.arrFlat(array2, Infinity)).toEqual([1])
+  expect(functions.arrFlat(array2, Infinity)).toEqual([1]);
+});
 
+//arrFlatMap
+test("return an array to which a callback function is applied (on each element) and which is flattened by one level", () => {
+  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  const callback1 = e => [e * 2]
+  const callback2 = e => [[e * 2]]
+  expect(functions.arrFlatMap(array, callback1)).toEqual([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]);
+  expect(functions.arrFlatMap(array, callback2)).toEqual([[2], [4], [6], [8], [10], [12], [14], [16], [18], [20]]);
 })
