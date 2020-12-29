@@ -117,3 +117,13 @@ test("return an array to which a callback function is applied (on each element) 
   expect(functions.arrFlatMap(array, callback1)).toEqual([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]);
   expect(functions.arrFlatMap(array, callback2)).toEqual([[2], [4], [6], [8], [10], [12], [14], [16], [18], [20]]);
 })
+
+//arrForEach
+test("return the result of operating on each element in an array", () => {
+  const array = ['a', 'b', 'c', 'd']
+  const array2 = [1, 2, 3]
+  const callback = (element, index, arr) => arr[index] = element.concat(', ', `index: ${index}`)
+  const callback2 = (element, index, arr)  => arr[index] = element * 100 
+  expect(functions.arrForEach(array, callback)).toEqual(['a, index: 0', 'b, index: 1', 'c, index: 2', 'd, index: 3']); 
+  expect(functions.arrForEach(array2, callback2)).toEqual([100, 200, 300])
+})
