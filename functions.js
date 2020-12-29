@@ -21,11 +21,9 @@ const functions = {
     arrFlat: (array, depth) => array.flat(depth),
     arrFlatMap: (array, callback) => array.flatMap(callback),
     arrForEach: (array, callback) => {
-        console.log(array, callback)
         array.forEach(callback) 
-        console.log(array)
         return array    
-    }
+    },
 }
 
 
