@@ -116,7 +116,7 @@ test("return an array to which a callback function is applied (on each element) 
   const callback2 = e => [[e * 2]]
   expect(functions.arrFlatMap(array, callback1)).toEqual([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]);
   expect(functions.arrFlatMap(array, callback2)).toEqual([[2], [4], [6], [8], [10], [12], [14], [16], [18], [20]]);
-})
+});
 
 //arrForEach
 test("return the result of operating on each element in an array", () => {
@@ -125,5 +125,14 @@ test("return the result of operating on each element in an array", () => {
   const callback = (element, index, arr) => arr[index] = element.concat(', ', `index: ${index}`)
   const callback2 = (element, index, arr)  => arr[index] = element * 100 
   expect(functions.arrForEach(array, callback)).toEqual(['a, index: 0', 'b, index: 1', 'c, index: 2', 'd, index: 3']); 
-  expect(functions.arrForEach(array2, callback2)).toEqual([100, 200, 300])
+  expect(functions.arrForEach(array2, callback2)).toEqual([100, 200, 300]);
+});
+
+//arrFrom
+test("return an Array instance from passed iterable, with an optional map operation", () => {
+  const input1 = "hello"
+  const input2 = {length: 10}
+  const callback = (_, i) => i
+  expect(functions.arrFrom(input1)).toEqual(['h', 'e', 'l', 'l', 'o']);
+  expect(functions.arrFrom(input2, callback)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
 })

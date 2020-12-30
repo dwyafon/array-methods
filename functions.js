@@ -24,6 +24,7 @@ const functions = {
         array.forEach(callback) 
         return array    
     },
+    arrFrom: (input, callback) => Array.from(input, callback),
 }
 
 
