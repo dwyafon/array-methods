@@ -23,12 +23,6 @@ test("concats two arrays", () => {
   expect(functions.arrConcat(arr1, arr2)).toEqual([1, 2, 3, 4, 5, 6]);
 });
 
-//arrIncludes
-test("returns true when array includes value; returns false when arrays does not include value", () => {
-  expect(functions.arrIncludes([1, 2, 3], 3)).toEqual(true);
-  expect(functions.arrIncludes([1, 2, 3], 4)).toEqual(false);
-});
-
 //arrCopyWithin
 test("returns a mutated array with positive-index and negative-index targets", () => {
   expect(functions.arrCopyWithin(["a", "b", "c"], 0, 2)).toEqual([
@@ -135,4 +129,19 @@ test("return an Array instance from passed iterable, with an optional map operat
   const callback = (_, i) => i
   expect(functions.arrFrom(input1)).toEqual(['h', 'e', 'l', 'l', 'o']);
   expect(functions.arrFrom(input2, callback)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-})
+});
+
+//arrIncludes
+test("return true when array includes value; return false when arrays does not include value", () => {
+  expect(functions.arrIncludes([1, 2, 3], 3)).toEqual(true);
+  expect(functions.arrIncludes([1, 2, 3], 4)).toEqual(false);
+});
+
+//arrIndexOf
+test("return the first index at which an element is found; return -1 if the element is not found", () => {
+  expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10, -3)).toEqual(9);
+  expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, -3)).toEqual(-1);
+  expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, 0)).toEqual(1)
+
+
+});
