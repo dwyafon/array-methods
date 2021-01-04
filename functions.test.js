@@ -2,18 +2,12 @@ const functions = require("./functions");
 
 // arrayFrom
 test("returns an array from a passed string", () => {
-  expect(functions.arrayFrom("goo")).toEqual(["g", "o", "o"]);
-});
-
-//arrayIsArray
-test("returns true when passed an array; returns false when passed a non-array", () => {
-  expect(functions.arrayIsArray([1, 2, 3])).toEqual(true);
-  expect(functions.arrayIsArray("Dale Cooper")).toEqual(false);
+  expect(functions.arrFrom("goo")).toEqual(["g", "o", "o"]);
 });
 
 //arrayOf
 test("returns an array when passed a non-array", () => {
-  expect(functions.arrayOf("Dale Cooper")).toEqual(["Dale Cooper"]);
+  expect(functions.arrOf("Dale Cooper")).toEqual(["Dale Cooper"]);
 });
 
 //arrConcat
@@ -142,6 +136,17 @@ test("return the first index at which an element is found; return -1 if the elem
   expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10, -3)).toEqual(9);
   expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, -3)).toEqual(-1);
   expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, 0)).toEqual(1)
+});
 
+//arrIsArray
+test("returns true when passed an array; returns false when passed a non-array", () => {
+  expect(functions.arrIsArray([1, 2, 3])).toEqual(true);
+  expect(functions.arrIsArray("Dale Cooper")).toEqual(false);
+});
 
+//arrJoin
+test("returns a string from an array, with an optional separator", () => {
+  expect(functions.arrJoin([1, 2, 3], '-')).toEqual("1-2-3");
+  expect(functions.arrJoin([1, 2, 3], '')).toEqual("123");
+  expect(functions.arrJoin([1, 2, 3])).toEqual("1,2,3");
 });
