@@ -150,3 +150,8 @@ test("returns a string from an array, with an optional separator", () => {
   expect(functions.arrJoin([1, 2, 3], '')).toEqual("123");
   expect(functions.arrJoin([1, 2, 3])).toEqual("1,2,3");
 });
+
+//arrKeys
+test("returns the keys from a passed array", () => {
+  expect(functions.arrKeys([1, 2, 3, 4, 5])).toEqual([0, 1, 2, 3, 4]);
+});

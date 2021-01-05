@@ -27,7 +27,7 @@ const functions = {
     arrIndexOf: (array, value, indexFrom) => array.indexOf(value, indexFrom),
     arrIsArray: (array) => Array.isArray(array),
     arrJoin: (array, separator) => array.join(separator),
+    arrKeys: (array) => [...array.keys()],
 }
-
 
 module.exports = functions;
