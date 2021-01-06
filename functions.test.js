@@ -155,3 +155,9 @@ test("returns a string from an array, with an optional separator", () => {
 test("returns the keys from a passed array", () => {
   expect(functions.arrKeys([1, 2, 3, 4, 5])).toEqual([0, 1, 2, 3, 4]);
 });
+
+//arrLastIndexOf
+test("returns the last index of a given value; if not present in the array, returns -1", () => {
+  expect(functions.arrLastIndexOf([1, 2, 3, 'four', 5], 4)).toEqual(-1);
+  expect(functions.arrLastIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5], 5)).toEqual(10);
+});

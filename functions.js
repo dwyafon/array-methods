@@ -28,6 +28,7 @@ const functions = {
     arrIsArray: (array) => Array.isArray(array),
     arrJoin: (array, separator) => array.join(separator),
     arrKeys: (array) => [...array.keys()],
+    arrLastIndexOf: (array, value) => array.lastIndexOf(value)
 }
 
 module.exports = functions;
