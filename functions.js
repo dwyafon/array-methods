@@ -28,7 +28,8 @@ const functions = {
     arrIsArray: (array) => Array.isArray(array),
     arrJoin: (array, separator) => array.join(separator),
     arrKeys: (array) => [...array.keys()],
-    arrLastIndexOf: (array, value) => array.lastIndexOf(value)
+    arrLastIndexOf: (array, value) => array.lastIndexOf(value),
+    arrMap: (array, callback) => array.map(callback)
 }
 
 module.exports = functions;

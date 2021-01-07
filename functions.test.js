@@ -161,3 +161,10 @@ test("returns the last index of a given value; if not present in the array, retu
   expect(functions.arrLastIndexOf([1, 2, 3, 'four', 5], 4)).toEqual(-1);
   expect(functions.arrLastIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5], 5)).toEqual(10);
 });
+
+//arrMap
+test("returns a new array populated with the same-order results of calling a function on each element in the passed array", () => {
+  const array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  const callback1 = e => Math.pow(e, 3)
+  expect(functions.arrMap(array1, callback1)).toEqual([1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]);
+});
