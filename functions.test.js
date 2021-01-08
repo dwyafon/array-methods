@@ -168,3 +168,9 @@ test("returns a new array populated with the same-order results of calling a fun
   const callback1 = e => Math.pow(e, 3)
   expect(functions.arrMap(array1, callback1)).toEqual([1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]);
 });
+
+//arrPop
+test("removes the last element from an array and returns it; if array is empty, returns undefined", () => {
+  expect(functions.arrPop([[1, 2, 3], [4, 5, 6], [7, 8, 9]])).toEqual([7, 8, 9])
+  expect(functions.arrPop([])).toEqual(undefined)
+})
