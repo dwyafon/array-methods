@@ -89,40 +89,111 @@ test("returns the index of the first value that passes a given test; if no eleme
 
 //arrFlat
 test("returns an array flattened to the specified depth; specified depth defaults to 1", () => {
-  const array = [1, 2, 3, [4, 5, 6, [7, 8, 9, [10, 11, 12]]]]
-  const array2 = [[[[[[[[[[[[[[[[[[[[[1]]]]]]]]]]]]]]]]]]]]]
-  expect(functions.arrFlat(array, 1)).toEqual([1, 2, 3, 4, 5, 6, [7, 8, 9, [10, 11, 12]]]);
-  expect(functions.arrFlat(array, 2)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, [10, 11, 12]]);
-  expect(functions.arrFlat(array, 3)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+  const array = [1, 2, 3, [4, 5, 6, [7, 8, 9, [10, 11, 12]]]];
+  const array2 = [[[[[[[[[[[[[[[[[[[[[1]]]]]]]]]]]]]]]]]]]]];
+  expect(functions.arrFlat(array, 1)).toEqual([
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    [7, 8, 9, [10, 11, 12]],
+  ]);
+  expect(functions.arrFlat(array, 2)).toEqual([
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    [10, 11, 12],
+  ]);
+  expect(functions.arrFlat(array, 3)).toEqual([
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+  ]);
   expect(functions.arrFlat(array2, Infinity)).toEqual([1]);
 });
 
 //arrFlatMap
 test("return an array to which a callback function is applied (on each element) and which is flattened by one level", () => {
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  const callback1 = e => [e * 2]
-  const callback2 = e => [[e * 2]]
-  expect(functions.arrFlatMap(array, callback1)).toEqual([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]);
-  expect(functions.arrFlatMap(array, callback2)).toEqual([[2], [4], [6], [8], [10], [12], [14], [16], [18], [20]]);
+  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const callback1 = (e) => [e * 2];
+  const callback2 = (e) => [[e * 2]];
+  expect(functions.arrFlatMap(array, callback1)).toEqual([
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+  ]);
+  expect(functions.arrFlatMap(array, callback2)).toEqual([
+    [2],
+    [4],
+    [6],
+    [8],
+    [10],
+    [12],
+    [14],
+    [16],
+    [18],
+    [20],
+  ]);
 });
 
 //arrForEach
 test("return the result of operating on each element in an array", () => {
-  const array = ['a', 'b', 'c', 'd']
-  const array2 = [1, 2, 3]
-  const callback = (element, index, arr) => arr[index] = element.concat(', ', `index: ${index}`)
-  const callback2 = (element, index, arr)  => arr[index] = element * 100 
-  expect(functions.arrForEach(array, callback)).toEqual(['a, index: 0', 'b, index: 1', 'c, index: 2', 'd, index: 3']); 
+  const array = ["a", "b", "c", "d"];
+  const array2 = [1, 2, 3];
+  const callback = (element, index, arr) =>
+    (arr[index] = element.concat(", ", `index: ${index}`));
+  const callback2 = (element, index, arr) => (arr[index] = element * 100);
+  expect(functions.arrForEach(array, callback)).toEqual([
+    "a, index: 0",
+    "b, index: 1",
+    "c, index: 2",
+    "d, index: 3",
+  ]);
   expect(functions.arrForEach(array2, callback2)).toEqual([100, 200, 300]);
 });
 
 //arrFrom
 test("return an Array instance from passed iterable, with an optional map operation", () => {
-  const input1 = "hello"
-  const input2 = {length: 10}
-  const callback = (_, i) => i
-  expect(functions.arrFrom(input1)).toEqual(['h', 'e', 'l', 'l', 'o']);
-  expect(functions.arrFrom(input2, callback)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  const input1 = "hello";
+  const input2 = { length: 10 };
+  const callback = (_, i) => i;
+  expect(functions.arrFrom(input1)).toEqual(["h", "e", "l", "l", "o"]);
+  expect(functions.arrFrom(input2, callback)).toEqual([
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+  ]);
 });
 
 //arrIncludes
@@ -133,9 +204,15 @@ test("return true when array includes value; return false when arrays does not i
 
 //arrIndexOf
 test("return the first index at which an element is found; return -1 if the element is not found", () => {
-  expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10, -3)).toEqual(9);
-  expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, -3)).toEqual(-1);
-  expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, 0)).toEqual(1)
+  expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10, -3)).toEqual(
+    9
+  );
+  expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, -3)).toEqual(
+    -1
+  );
+  expect(functions.arrIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, 0)).toEqual(
+    1
+  );
 });
 
 //arrIsArray
@@ -146,8 +223,8 @@ test("returns true when passed an array; returns false when passed a non-array",
 
 //arrJoin
 test("returns a string from an array, with an optional separator", () => {
-  expect(functions.arrJoin([1, 2, 3], '-')).toEqual("1-2-3");
-  expect(functions.arrJoin([1, 2, 3], '')).toEqual("123");
+  expect(functions.arrJoin([1, 2, 3], "-")).toEqual("1-2-3");
+  expect(functions.arrJoin([1, 2, 3], "")).toEqual("123");
   expect(functions.arrJoin([1, 2, 3])).toEqual("1,2,3");
 });
 
@@ -158,19 +235,49 @@ test("returns the keys from a passed array", () => {
 
 //arrLastIndexOf
 test("returns the last index of a given value; if not present in the array, returns -1", () => {
-  expect(functions.arrLastIndexOf([1, 2, 3, 'four', 5], 4)).toEqual(-1);
-  expect(functions.arrLastIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5], 5)).toEqual(10);
+  expect(functions.arrLastIndexOf([1, 2, 3, "four", 5], 4)).toEqual(-1);
+  expect(
+    functions.arrLastIndexOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5], 5)
+  ).toEqual(10);
 });
 
 //arrMap
 test("returns a new array populated with the same-order results of calling a function on each element in the passed array", () => {
-  const array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  const callback1 = e => Math.pow(e, 3)
-  expect(functions.arrMap(array1, callback1)).toEqual([1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]);
+  const array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const callback1 = (e) => Math.pow(e, 3);
+  expect(functions.arrMap(array1, callback1)).toEqual([
+    1,
+    8,
+    27,
+    64,
+    125,
+    216,
+    343,
+    512,
+    729,
+    1000,
+  ]);
 });
 
 //arrPop
 test("removes the last element from an array and returns it; if array is empty, returns undefined", () => {
-  expect(functions.arrPop([[1, 2, 3], [4, 5, 6], [7, 8, 9]])).toEqual([7, 8, 9])
-  expect(functions.arrPop([])).toEqual(undefined)
+  expect(
+    functions.arrPop([
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+    ])
+  ).toEqual([7, 8, 9]);
+  expect(functions.arrPop([])).toEqual(undefined);
+});
+
+//arrPush
+test("returns the new length of the array on which push() was called", () => {
+  expect(functions.arrPush1([1, 2, 3])).toEqual(4);
+});
+
+test("returns a new array from one array pushed to another array", () => {
+  expect(functions.arrPush2([1, 2, 3], [4, 5, 6])).toEqual([1, 2, 3, 4, 5, 6])
 })
+
+//arrReduce
