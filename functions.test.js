@@ -277,10 +277,12 @@ test("returns the new length of the array on which push() was called", () => {
 });
 
 test("returns a new array from one array pushed to another array", () => {
-  expect(functions.arrPush2([1, 2, 3], [4, 5, 6])).toEqual([1, 2, 3, 4, 5, 6])
-})
+  expect(functions.arrPush2([1, 2, 3], [4, 5, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+});
 
 //arrReduce
 test("returns a single value after calling a reducer function on each element in an array", () => {
-  expect(functions.arrReduce(['Dale', 'Audrey', 'Harry', 'Dale', 'Laura'])).toEqual({Dale: 2, Audrey: 1, Harry: 1, Laura: 1})
-})
+  expect(
+    functions.arrReduce(["Dale", "Audrey", "Harry", "Dale", "Laura"])
+  ).toEqual({ Dale: 2, Audrey: 1, Harry: 1, Laura: 1 });
+});
