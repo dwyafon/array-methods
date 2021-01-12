@@ -42,6 +42,9 @@ const functions = {
     else acc[cur] = 1
     return acc
   }, {}),
+  arrReduceRight: (array) => array.reduceRight((acc, cur) => {
+    return acc.concat(cur)
+  }, [])
 };
 
 module.exports = functions;

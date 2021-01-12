@@ -281,8 +281,18 @@ test("returns a new array from one array pushed to another array", () => {
 });
 
 //arrReduce
-test("returns a single value after calling a reducer function on each element in an array", () => {
+test("returns a single value after calling a reducer function on each element, left to right, in an array", () => {
   expect(
     functions.arrReduce(["Dale", "Audrey", "Harry", "Dale", "Laura"])
   ).toEqual({ Dale: 2, Audrey: 1, Harry: 1, Laura: 1 });
+});
+
+test("return a single value after calling a reducer function on each element, right to left, in an array", () => {
+  expect(
+    functions.arrReduceRight([
+      [4, 5],
+      [2, 3],
+      [0, 1],
+    ])
+  ).toEqual([0, 1, 2, 3, 4, 5]);
 });
