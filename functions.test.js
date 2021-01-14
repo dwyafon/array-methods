@@ -296,3 +296,18 @@ test("return a single value after calling a reducer function on each element, ri
     ])
   ).toEqual([0, 1, 2, 3, 4, 5]);
 });
+
+//arrReverse
+test("returns a reversed array", () => {
+  expect(functions.arrReverse([1, 2, 3, 4, 5])).toEqual([5, 4, 3, 2, 1]);
+});
+
+//arrReverse
+test("returns a reversed array-like object", () => {
+  expect(functions.arrReverse({ length: 3, 0: 2, 1: 3, 2: 4 })).toEqual({
+    length: 3,
+    0: 4,
+    1: 3,
+    2: 2,
+  });
+});

@@ -44,7 +44,8 @@ const functions = {
   }, {}),
   arrReduceRight: (array) => array.reduceRight((acc, cur) => {
     return acc.concat(cur)
-  }, [])
+  }, []),
+  arrReverse: (array) => Array.prototype.reverse.call(array)
 };
 
 module.exports = functions;
