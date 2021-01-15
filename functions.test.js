@@ -311,3 +311,9 @@ test("returns a reversed array-like object", () => {
     2: 2,
   });
 });
+
+//arrShift
+test("returns the value removed from the beginning of the array or array-like object", () => {
+  expect(functions.arrShift([4, 1, 2, 3])).toEqual(4)
+  expect(functions.arrShift({length: 3, 0: 'a', 1: 'b', 2:'c', })).toEqual('a')
+})

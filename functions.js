@@ -45,7 +45,8 @@ const functions = {
   arrReduceRight: (array) => array.reduceRight((acc, cur) => {
     return acc.concat(cur)
   }, []),
-  arrReverse: (array) => Array.prototype.reverse.call(array)
+  arrReverse: (array) => Array.prototype.reverse.call(array),
+  arrShift: (input) => Array.prototype.shift.call(input)
 };
 
 module.exports = functions;
