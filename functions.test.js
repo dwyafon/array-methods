@@ -317,3 +317,10 @@ test("returns the value removed from the beginning of the array or array-like ob
   expect(functions.arrShift([4, 1, 2, 3])).toEqual(4)
   expect(functions.arrShift({length: 3, 0: 'a', 1: 'b', 2:'c', })).toEqual('a')
 })
+
+//arrSlice
+test("returns the sliced portion of a passed array", () => {
+  const start = 2
+  const end = 4
+  expect(functions.arrSlice([{1: 'a'}, {2: 'b'}, {3: 'c'}, {4: 'd'}, {5: 'e'}], start, end)).toEqual([{3: 'c'}, {4: 'd'}])
+})

@@ -46,7 +46,8 @@ const functions = {
     return acc.concat(cur)
   }, []),
   arrReverse: (array) => Array.prototype.reverse.call(array),
-  arrShift: (input) => Array.prototype.shift.call(input)
+  arrShift: (input) => Array.prototype.shift.call(input),
+  arrSlice: (array, start, end) => array.slice(start, end)
 };
 
 module.exports = functions;
