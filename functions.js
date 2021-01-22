@@ -47,7 +47,8 @@ const functions = {
   }, []),
   arrReverse: (array) => Array.prototype.reverse.call(array),
   arrShift: (input) => Array.prototype.shift.call(input),
-  arrSlice: (array, start, end) => array.slice(start, end)
+  arrSlice: (array, start, end) => array.slice(start, end),
+  arrSome: (array, test) => array.some(test)
 };
 
 module.exports = functions;
