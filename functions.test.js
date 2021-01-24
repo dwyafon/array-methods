@@ -332,3 +332,10 @@ test("returns true or false after checking if at least one value passes a provid
   expect(functions.arrSome([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], test1)).toEqual(false);
   expect(functions.arrSome(["Dale", "Hawk", "Lucy", "Harry", "Audrey"], test2)).toEqual(true);
 });
+
+//arrSort
+test("returns a mutated array, with the values of the array sorted via the compare function", () => {
+  const arr = [{name: 'Dale', accessLevel: 3}, {name: "Laura", accessLevel: 1}, {name: "Audrey", accessLevel: 2}]
+  const expectedOutput = [{name: "Laura", accessLevel: 1}, {name: "Audrey", accessLevel: 2}, {name: 'Dale', accessLevel: 3}]
+  expect(functions.arrSort(arr)).toEqual(expectedOutput)
+})

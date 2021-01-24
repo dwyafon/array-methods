@@ -48,7 +48,8 @@ const functions = {
   arrReverse: (array) => Array.prototype.reverse.call(array),
   arrShift: (input) => Array.prototype.shift.call(input),
   arrSlice: (array, start, end) => array.slice(start, end),
-  arrSome: (array, test) => array.some(test)
+  arrSome: (array, test) => array.some(test),
+  arrSort: (array) => array.sort((a, b) => a.accessLevel - b.accessLevel),
 };
 
 module.exports = functions;
