@@ -50,6 +50,7 @@ const functions = {
   arrSlice: (array, start, end) => array.slice(start, end),
   arrSome: (array, test) => array.some(test),
   arrSort: (array) => array.sort((a, b) => a.accessLevel - b.accessLevel),
+  arrSplice: (array) => array.splice(2, 4, 3, 4, 5),
 };
 
 module.exports = functions;

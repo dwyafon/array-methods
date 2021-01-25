@@ -335,7 +335,14 @@ test("returns true or false after checking if at least one value passes a provid
 
 //arrSort
 test("returns a mutated array, with the values of the array sorted via the compare function", () => {
-  const arr = [{name: 'Dale', accessLevel: 3}, {name: "Laura", accessLevel: 1}, {name: "Audrey", accessLevel: 2}]
-  const expectedOutput = [{name: "Laura", accessLevel: 1}, {name: "Audrey", accessLevel: 2}, {name: 'Dale', accessLevel: 3}]
-  expect(functions.arrSort(arr)).toEqual(expectedOutput)
+  const arr = [{name: 'Dale', accessLevel: 3}, {name: "Laura", accessLevel: 1}, {name: "Audrey", accessLevel: 2}];
+  const expectedOutput = [{name: "Laura", accessLevel: 1}, {name: "Audrey", accessLevel: 2}, {name: 'Dale', accessLevel: 3}];
+  expect(functions.arrSort(arr)).toEqual(expectedOutput);
+});
+
+//arrSplice
+test("returns a mutated array after deleting and/or adding elements from/to the original array", () => {
+  const arr = [1, 2, 2, 2, 3, 4, 6, 7, 8, 9, 10];
+  const expectedOutput = [2, 2, 3, 4];
+  expect(functions.arrSplice(arr)).toEqual(expectedOutput);
 })
