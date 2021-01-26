@@ -51,6 +51,7 @@ const functions = {
   arrSome: (array, test) => array.some(test),
   arrSort: (array) => array.sort((a, b) => a.accessLevel - b.accessLevel),
   arrSplice: (array) => array.splice(2, 4, 3, 4, 5),
+  arrToLocaleString: (array) => array.toLocaleString('ja-JP', {style: 'currency', currency: 'JPY'}),
 };
 
 module.exports = functions;

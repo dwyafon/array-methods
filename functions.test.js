@@ -314,29 +314,49 @@ test("returns a reversed array-like object", () => {
 
 //arrShift
 test("returns the value removed from the beginning of the array or array-like object", () => {
-  expect(functions.arrShift([4, 1, 2, 3])).toEqual(4)
-  expect(functions.arrShift({length: 3, 0: 'a', 1: 'b', 2:'c', })).toEqual('a')
+  expect(functions.arrShift([4, 1, 2, 3])).toEqual(4);
+  expect(functions.arrShift({ length: 3, 0: "a", 1: "b", 2: "c" })).toEqual(
+    "a"
+  );
 });
 
 //arrSlice
 test("returns the sliced portion of a passed array", () => {
-  const start = 2
-  const end = 4
-  expect(functions.arrSlice([{1: 'a'}, {2: 'b'}, {3: 'c'}, {4: 'd'}, {5: 'e'}], start, end)).toEqual([{3: 'c'}, {4: 'd'}]);
+  const start = 2;
+  const end = 4;
+  expect(
+    functions.arrSlice(
+      [{ 1: "a" }, { 2: "b" }, { 3: "c" }, { 4: "d" }, { 5: "e" }],
+      start,
+      end
+    )
+  ).toEqual([{ 3: "c" }, { 4: "d" }]);
 });
 
 //arrSome
 test("returns true or false after checking if at least one value passes a provided test", () => {
-  const test1 = e => e > 10 
-  const test2 = e => e === "Dale"
-  expect(functions.arrSome([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], test1)).toEqual(false);
-  expect(functions.arrSome(["Dale", "Hawk", "Lucy", "Harry", "Audrey"], test2)).toEqual(true);
+  const test1 = (e) => e > 10;
+  const test2 = (e) => e === "Dale";
+  expect(functions.arrSome([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], test1)).toEqual(
+    false
+  );
+  expect(
+    functions.arrSome(["Dale", "Hawk", "Lucy", "Harry", "Audrey"], test2)
+  ).toEqual(true);
 });
 
 //arrSort
 test("returns a mutated array, with the values of the array sorted via the compare function", () => {
-  const arr = [{name: 'Dale', accessLevel: 3}, {name: "Laura", accessLevel: 1}, {name: "Audrey", accessLevel: 2}];
-  const expectedOutput = [{name: "Laura", accessLevel: 1}, {name: "Audrey", accessLevel: 2}, {name: 'Dale', accessLevel: 3}];
+  const arr = [
+    { name: "Dale", accessLevel: 3 },
+    { name: "Laura", accessLevel: 1 },
+    { name: "Audrey", accessLevel: 2 },
+  ];
+  const expectedOutput = [
+    { name: "Laura", accessLevel: 1 },
+    { name: "Audrey", accessLevel: 2 },
+    { name: "Dale", accessLevel: 3 },
+  ];
   expect(functions.arrSort(arr)).toEqual(expectedOutput);
 });
 
@@ -345,4 +365,12 @@ test("returns a mutated array after deleting and/or adding elements from/to the 
   const arr = [1, 2, 2, 2, 3, 4, 6, 7, 8, 9, 10];
   const expectedOutput = [2, 2, 3, 4];
   expect(functions.arrSplice(arr)).toEqual(expectedOutput);
-})
+});
+
+//arrToLocaleString
+test("converts the elements within the array using their toLocaleString methods and returns one string", () => {
+  const input = [100];
+  expect(functions.arrToLocaleString(input)).toEqual(
+    "￥100"
+  );
+});
