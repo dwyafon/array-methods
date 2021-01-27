@@ -370,7 +370,12 @@ test("returns a mutated array after deleting and/or adding elements from/to the 
 //arrToLocaleString
 test("converts the elements within the array using their toLocaleString methods and returns one string", () => {
   const input = [100];
-  expect(functions.arrToLocaleString(input)).toEqual(
-    "￥100"
-  );
+  expect(functions.arrToLocaleString(input)).toEqual("￥100");
+});
+
+//arrToString
+test("returns a string representing the passed array", () => {
+  expect(
+    functions.arrToString([1, 2, 3, "4", "5", "6", true, false])
+  ).toEqual("1,2,3,4,5,6,true,false");
 });
