@@ -379,3 +379,8 @@ test("returns a string representing the passed array", () => {
     functions.arrToString([1, 2, 3, "4", "5", "6", true, false])
   ).toEqual("1,2,3,4,5,6,true,false");
 });
+
+//arrUnshift
+test("mutates the array by adding the passed values to the passed array and return the mutated array", () => {
+  expect(functions.arrUnshift([0, 1, 2, 3], -3, -2, -1)).toEqual([-3, -2, -1, 0, 1, 2, 3])
+})
