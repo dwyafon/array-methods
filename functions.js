@@ -6,11 +6,11 @@ const functions = {
   arrCopyWithin: (array, target, start, end) =>
     array.copyWithin(target, start, end),
   arrEntries: (array) => {
-    let entries = []
+    let entries = [];
     for (let e of array.entries()) {
-      entries.push(e)
+      entries.push(e);
     }
-    return entries
+    return entries;
   },
   arrEvery: (array) => array.every((e) => e <= 10),
   arrFill: (array, value, start, end) => array.fill(value, start, end),
@@ -20,8 +20,8 @@ const functions = {
   arrFlat: (array, depth) => array.flat(depth),
   arrFlatMap: (array, callback) => array.flatMap(callback),
   arrForEach: (array, callback) => {
-    array.forEach(callback)
-    return array
+    array.forEach(callback);
+    return array;
   },
   arrFrom: (input, callback) => Array.from(input, callback),
   arrIncludes: (array, value) => array.includes(value),
@@ -32,20 +32,20 @@ const functions = {
   arrLastIndexOf: (array, value) => array.lastIndexOf(value),
   arrMap: (array, callback) => array.map(callback),
   arrPop: (array) => array.pop(),
-  arrPush1: (array) => array.push('4'),
+  arrPush1: (array) => array.push("4"),
   arrPush2: (array1, array2) => {
-    Array.prototype.push.apply(array1, array2)
-    return array1
+    Array.prototype.push.apply(array1, array2);
+    return array1;
   },
   arrReduce: (array) =>
     array.reduce((acc, cur) => {
-      if (cur in acc) acc[cur]++
-      else acc[cur] = 1
-      return acc
+      if (cur in acc) acc[cur]++;
+      else acc[cur] = 1;
+      return acc;
     }, {}),
   arrReduceRight: (array) =>
     array.reduceRight((acc, cur) => {
-      return acc.concat(cur)
+      return acc.concat(cur);
     }, []),
   arrReverse: (array) => Array.prototype.reverse.call(array),
   arrShift: (input) => Array.prototype.shift.call(input),
@@ -54,12 +54,13 @@ const functions = {
   arrSort: (array) => array.sort((a, b) => a.accessLevel - b.accessLevel),
   arrSplice: (array) => array.splice(2, 4, 3, 4, 5),
   arrToLocaleString: (array) =>
-    array.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }),
+    array.toLocaleString("ja-JP", { style: "currency", currency: "JPY" }),
   arrToString: (array) => array.toString(),
   arrUnshift: (array, ...args) => {
-    array.unshift(...args)
-    return array
+    array.unshift(...args);
+    return array;
   },
-}
+  arrValues: (array) => array.values().next(),
+};
 
-module.exports = functions
+module.exports = functions;
